@@ -16,17 +16,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 210 100% 50%;
+    --primary: 250 85% 60%;
     --primary-foreground: 210 40% 98%;
+
+    --accent: 25 95% 55%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222 47% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 216 100% 96%;
-    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -48,17 +48,17 @@
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
     
-    --primary: 210 100% 50%;
+    --primary: 250 85% 65%;
     --primary-foreground: 222 47% 11%;
+    
+    --accent: 25 95% 55%;
+    --accent-foreground: 210 40% 98%;
     
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
     
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-    
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -97,7 +97,17 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 inline-block;
+    @apply text-3xl md:text-4xl font-bold mb-8 inline-block relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 4px;
+      background: linear-gradient(to right, hsl(var(--primary)), transparent);
+      bottom: -8px;
+      left: 0;
+      border-radius: 2px;
+    }
   }
   
   .section-subtitle {
@@ -135,16 +145,22 @@
   @apply bg-primary text-primary-foreground;
 }
 
-/* Custom scroll animations */
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* New keyframe animations */
+@keyframes shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes pulse-animation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
 
 /* Added animations that were previously in the components */
@@ -207,4 +223,37 @@
 [data-radix-progress-indicator] {
   transform: translateX(0%) !important;
   transition: width 1s ease-out !important;
+}
+
+/* Added transitions for interactive elements */
+.card, .glass, a, button {
+  transition: all 0.3s ease;
+}
+
+/* New attention-grabbing elements */
+.highlight-text {
+  @apply relative inline-block;
+  background: linear-gradient(120deg, transparent 0%, hsl(var(--primary)/0.2) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shine 3s infinite;
+}
+
+.pulse-slow {
+  animation: pulse-animation 3s infinite;
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.border-gradient {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius) + 2px);
+    background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+    z-index: -1;
+  }
 }
