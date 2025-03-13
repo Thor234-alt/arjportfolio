@@ -118,6 +118,26 @@
   }
 }
 
+/* Added animations that were previously in the components */
+@keyframes scrollDown {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
+}
+
+@keyframes progressAnimation {
+  from {
+    width: var(--initial-value);
+  }
+  to {
+    width: calc(var(--target-value) * 1%);
+  }
+}
+
+/* Animation class for scroll down indicator */
+.animate-scroll-down {
+  animation: scrollDown 1.5s ease-in-out infinite;
+}
+
 .reveal {
   opacity: 0;
   animation: reveal 0.8s forwards;

@@ -83,20 +83,14 @@ const Hero = () => {
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
           <span className="text-sm text-muted-foreground mb-2">Scroll to explore</span>
           <div className="w-0.5 h-10 bg-muted-foreground/30 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full bg-primary animate-[scroll_1.5s_ease-in-out_infinite]" style={{
+            <div className="absolute top-0 left-0 w-full bg-primary animate-scroll-down" style={{
               height: '30%',
-              animation: 'scrollDown 1.5s ease-in-out infinite',
             }}></div>
           </div>
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes scrollDown {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(300%); }
-        }
-      `}</style>
+      {/* Moving the keyframes animation to index.css */}
     </section>
   );
 };

@@ -141,16 +141,7 @@ const Skills = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes progressAnimation {
-          from {
-            width: var(--initial-value);
-          }
-          to {
-            width: calc(var(--target-value) * 1%);
-          }
-        }
-      `}</style>
+      {/* Moving keyframes to index.css */}
     </section>
   );
 };
