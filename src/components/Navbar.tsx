@@ -1,13 +1,16 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Edit } from 'lucide-react';
 import ThemeToggle from '@/components/ThemeToggle';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [name, setName] = useState('Your Name');
+  const [isEditing, setIsEditing] = useState(false);
+  const nameInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,8 +25,43 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Check localStorage for saved name
+    const savedName = localStorage.getItem('userName');
+    if (savedName) {
+      setName(savedName);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isEditing && nameInputRef.current) {
+      nameInputRef.current.focus();
+    }
+  }, [isEditing]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleNameEdit = () => {
+    setIsEditing(true);
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  const handleNameSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsEditing(false);
+    localStorage.setItem('userName', name);
+  };
+
+  const handleClickOutside = () => {
+    if (isEditing) {
+      setIsEditing(false);
+      localStorage.setItem('userName', name);
+    }
   };
 
   return (
@@ -35,12 +73,44 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <a 
-            href="#home" 
-            className="text-xl md:text-2xl font-bold tracking-tight transition-all duration-300 hover:text-primary"
-          >
-            {name}<span className="text-primary">.</span>
-          </a>
+          {isEditing ? (
+            <form onSubmit={handleNameSubmit} className="flex items-center">
+              <input
+                ref={nameInputRef}
+                type="text"
+                value={name}
+                onChange={handleNameChange}
+                onBlur={handleClickOutside}
+                className="bg-transparent border-b border-primary focus:outline-none focus:border-accent text-xl md:text-2xl font-bold tracking-tight"
+                aria-label="Edit your name"
+              />
+              <Button 
+                type="submit" 
+                variant="ghost" 
+                size="icon" 
+                className="ml-1 text-primary hover:text-accent"
+              >
+                <Edit size={16} />
+              </Button>
+            </form>
+          ) : (
+            <div className="flex items-center">
+              <a 
+                href="#home" 
+                className="text-xl md:text-2xl font-bold tracking-tight transition-all duration-300 hover:text-primary"
+              >
+                {name}<span className="text-gradient">.</span>
+              </a>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={handleNameEdit}
+                className="ml-1 text-muted-foreground hover:text-primary"
+              >
+                <Edit size={16} />
+              </Button>
+            </div>
+          )}
         </div>
 
         <div className="flex items-center space-x-6">

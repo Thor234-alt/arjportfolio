@@ -56,7 +56,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-tight lg:leading-tight mb-6">
-            Building <span className="text-primary highlight-text">intelligent solutions</span> with code & AI
+            Building <span className="text-gradient highlight-text">intelligent solutions</span> with code & AI
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl">
@@ -64,19 +64,19 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-            <Button size="lg" className="group relative overflow-hidden border-gradient bg-background hover:bg-accent/5 transition-all duration-500">
+            <Button size="lg" className="glow-on-hover relative overflow-hidden border-gradient bg-background hover:bg-accent/5 transition-all duration-500 group">
               <span className="relative z-10">View Projects</span>
               <ArrowDown size={16} className="ml-2 group-hover:translate-y-1 transition-transform duration-300 relative z-10" />
             </Button>
             
             <div className="flex items-center gap-6">
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors duration-300" aria-label="GitHub">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="GitHub">
                 <Github size={20} className="hover:scale-110 transition-transform duration-300" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="LinkedIn">
+              <a href="#" className="text-muted-foreground hover:text-accent transition-colors duration-300" aria-label="LinkedIn">
                 <Linkedin size={20} className="hover:scale-110 transition-transform duration-300" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors duration-300" aria-label="Email">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="Email">
                 <Mail size={20} className="hover:scale-110 transition-transform duration-300" />
               </a>
             </div>

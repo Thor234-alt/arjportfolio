@@ -70,7 +70,7 @@ const Skills = () => {
   return (
     <section 
       id="skills" 
-      className="py-20 md:py-32 bg-accent/5 dark:bg-accent/5 transition-colors duration-500"
+      className="py-20 md:py-32 bg-primary/5 dark:bg-primary/5 transition-colors duration-500"
       ref={skillsRef}
     >
       <div className="section-container">
@@ -92,7 +92,7 @@ const Skills = () => {
               }}
             >
               <h3 className="text-xl font-semibold mb-8 pb-2 border-b dark:border-gray-700">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">{category.title}</span>
+                <span className="text-gradient">{category.title}</span>
               </h3>
               
               <div className="space-y-6">
@@ -112,10 +112,11 @@ const Skills = () => {
                     </div>
                     <Progress 
                       value={isVisible ? skill.level : 0} 
-                      className="h-2 progress-bar-animated"
+                      className="h-2.5 progress-bar-animated"
                       style={{
                         '--initial-value': '0%',
                         '--target-value': skill.level,
+                        background: 'rgba(var(--primary), 0.2)',
                         transition: `all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${0.5 + skillIndex * 0.1}s`
                       } as React.CSSProperties}
                     />
@@ -128,7 +129,7 @@ const Skills = () => {
 
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="glass rounded-2xl p-8 h-full reveal delay-3 dark:bg-gray-800/30 dark:backdrop-blur-xl dark:border-white/10 hover:shadow-xl transition-all duration-500 hover:border-primary/30">
-            <h3 className="text-xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Education</h3>
+            <h3 className="text-xl font-semibold mb-6 text-gradient">Education</h3>
             <div className="space-y-6">
               <div className="border-l-2 border-primary pl-6 py-2 relative hover:pl-8 transition-all duration-300">
                 <div className="absolute w-3 h-3 bg-primary rounded-full -left-[7px] top-3 pulse-slow"></div>
@@ -144,7 +145,7 @@ const Skills = () => {
           </div>
           
           <div className="glass rounded-2xl p-8 h-full reveal delay-4 dark:bg-gray-800/30 dark:backdrop-blur-xl dark:border-white/10 hover:shadow-xl transition-all duration-500 hover:border-primary/30">
-            <h3 className="text-xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Certifications</h3>
+            <h3 className="text-xl font-semibold mb-6 text-gradient">Certifications</h3>
             <div className="space-y-6">
               <div className="flex gap-4 items-start group hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                 <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/5 group-hover:bg-primary/20 transition-colors duration-300">

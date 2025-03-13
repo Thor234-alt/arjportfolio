@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
@@ -8,25 +9,25 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 220 20% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 220 20% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 250 85% 60%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 200 95% 55%;
+    --primary-foreground: 0 0% 98%;
 
     --accent: 25 95% 55%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11.2%;
+    --secondary: 200 30% 96%;
+    --secondary-foreground: 220 20% 10%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 200 30% 96%;
+    --muted-foreground: 220 10% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -39,32 +40,32 @@
   }
 
   .dark {
-    --background: 222 47% 11%;
+    --background: 230 25% 10%;
     --foreground: 210 40% 98%;
     
-    --card: 222 47% 11%;
+    --card: 230 25% 10%;
     --card-foreground: 210 40% 98%;
     
-    --popover: 222 47% 11%;
+    --popover: 230 25% 10%;
     --popover-foreground: 210 40% 98%;
     
-    --primary: 250 85% 65%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 200 95% 60%;
+    --primary-foreground: 0 0% 98%;
     
     --accent: 25 95% 55%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 0 0% 98%;
     
-    --secondary: 217 33% 17%;
+    --secondary: 215 28% 17%;
     --secondary-foreground: 210 40% 98%;
     
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 210 38% 80%;
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
     --ring: 224.3 76.3% 48%;
   }
 
@@ -233,7 +234,7 @@
 /* New attention-grabbing elements */
 .highlight-text {
   @apply relative inline-block;
-  background: linear-gradient(120deg, transparent 0%, hsl(var(--primary)/0.2) 50%, transparent 100%);
+  background: linear-gradient(120deg, transparent 0%, hsl(var(--accent)/0.3) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shine 3s infinite;
 }
@@ -256,4 +257,57 @@
     background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
     z-index: -1;
   }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glow-on-hover {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.glow-on-hover:after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent 30%
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-on-hover:hover:after {
+  opacity: 1;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
