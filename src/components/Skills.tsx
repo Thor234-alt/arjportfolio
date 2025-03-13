@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Progress } from '@/components/ui/progress';
 
 interface SkillCategory {
@@ -13,6 +13,27 @@ interface Skill {
 }
 
 const Skills = () => {
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+    
+    return () => observer.disconnect();
+  }, []);
+
   const skillCategories: SkillCategory[] = [
     {
       title: "Programming Languages",
@@ -47,7 +68,11 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 md:py-32 bg-accent/30">
+    <section 
+      id="skills" 
+      className="py-20 md:py-32 bg-accent/30 dark:bg-accent/5"
+      ref={skillsRef}
+    >
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="section-title">Skills & Expertise</h2>
@@ -59,38 +84,29 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="glass rounded-2xl p-8 reveal delay-1">
-              <h3 className="text-xl font-semibold mb-8 pb-2 border-b">{category.title}</h3>
+            <div key={categoryIndex} className="glass rounded-2xl p-8 reveal delay-1 dark:bg-gray-800/30 dark:backdrop-blur-xl dark:border-white/10">
+              <h3 className="text-xl font-semibold mb-8 pb-2 border-b dark:border-gray-700">{category.title}</h3>
               
               <div className="space-y-6">
-                {category.skills.map((skill, skillIndex) => {
-                  const animationDelay = 0.1 + (skillIndex * 0.05);
-                  
-                  return (
-                    <div key={skillIndex} className="space-y-2">
-                      <div className="flex justify-between">
-                        <span className="font-medium">{skill.name}</span>
-                        <span className="text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <Progress 
-                        value={0} 
-                        className="transition-all duration-1000 ease-out" 
-                        style={{
-                          '--initial-value': '0',
-                          '--target-value': `${skill.level}`,
-                          animation: `progressAnimation 1.5s ease-out ${animationDelay}s forwards`
-                        } as React.CSSProperties}
-                      />
+                {category.skills.map((skill, skillIndex) => (
+                  <div key={skillIndex} className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="font-medium">{skill.name}</span>
+                      <span className="text-muted-foreground">{skill.level}%</span>
                     </div>
-                  );
-                })}
+                    <Progress 
+                      value={isVisible ? skill.level : 0} 
+                      className="h-2 transition-all duration-1000 ease-out delay-300"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           ))}
         </div>
 
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="glass rounded-2xl p-8 h-full reveal delay-3">
+          <div className="glass rounded-2xl p-8 h-full reveal delay-3 dark:bg-gray-800/30 dark:backdrop-blur-xl dark:border-white/10">
             <h3 className="text-xl font-semibold mb-6">Education</h3>
             <div className="space-y-6">
               <div className="border-l-2 border-primary pl-6 py-2 relative">
@@ -106,11 +122,11 @@ const Skills = () => {
             </div>
           </div>
           
-          <div className="glass rounded-2xl p-8 h-full reveal delay-4">
+          <div className="glass rounded-2xl p-8 h-full reveal delay-4 dark:bg-gray-800/30 dark:backdrop-blur-xl dark:border-white/10">
             <h3 className="text-xl font-semibold mb-6">Certifications</h3>
             <div className="space-y-6">
               <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-primary/10">
+                <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/5">
                   <span className="text-primary font-medium">AI</span>
                 </div>
                 <div>
@@ -119,7 +135,7 @@ const Skills = () => {
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-primary/10">
+                <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/5">
                   <span className="text-primary font-medium">Dev</span>
                 </div>
                 <div>
@@ -128,7 +144,7 @@ const Skills = () => {
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-primary/10">
+                <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/5">
                   <span className="text-primary font-medium">Py</span>
                 </div>
                 <div>
@@ -140,8 +156,6 @@ const Skills = () => {
           </div>
         </div>
       </div>
-
-      {/* Moving keyframes to index.css */}
     </section>
   );
 };
