@@ -38,25 +38,21 @@ const Hero = () => {
     >
       {/* Background gradient */}
       <div 
-        className="absolute inset-0 -z-10 transition-all duration-1000"
+        className="absolute inset-0 bg-gradient-to-br from-accent/40 via-background to-background -z-10"
         style={{
-          background: 'radial-gradient(circle at calc(var(--mouse-x, 0.5) * 100%) calc(var(--mouse-y, 0.5) * 100%), hsl(var(--primary)/0.15) 0%, rgba(59, 130, 246, 0) 50%)'
+          background: 'radial-gradient(circle at calc(var(--mouse-x, 0.5) * 100%) calc(var(--mouse-y, 0.5) * 100%), rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0) 50%)'
         }}
       />
-      
-      {/* Floating accent elements */}
-      <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-accent/5 blur-3xl opacity-70 float-animation"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-48 h-48 rounded-full bg-primary/10 blur-3xl opacity-70 float-animation" style={{ animationDelay: '2s' }}></div>
       
       {/* Content */}
       <div className="section-container flex flex-col items-start">
         <div className="reveal max-w-4xl">
-          <div className="inline-block rounded-full bg-accent/10 border border-accent/20 px-4 py-1.5 mb-6 animate-fade-in shadow-sm">
-            <span className="text-sm font-medium text-accent">3rd Year Computer Science Student</span>
+          <div className="inline-block rounded-full bg-accent px-4 py-1.5 mb-6 animate-fade-in">
+            <span className="text-sm font-medium text-primary">3rd Year Computer Science Student</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-tight lg:leading-tight mb-6">
-            Building <span className="text-gradient highlight-text">intelligent solutions</span> with code & AI
+            Building intelligent solutions with code & AI
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl">
@@ -64,20 +60,20 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-            <Button size="lg" className="glow-on-hover relative overflow-hidden border-gradient bg-background hover:bg-accent/5 transition-all duration-500 group">
-              <span className="relative z-10">View Projects</span>
-              <ArrowDown size={16} className="ml-2 group-hover:translate-y-1 transition-transform duration-300 relative z-10" />
+            <Button size="lg" className="group">
+              View Projects
+              <ArrowDown size={16} className="ml-2 group-hover:translate-y-1 transition-transform" />
             </Button>
             
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="GitHub">
-                <Github size={20} className="hover:scale-110 transition-transform duration-300" />
+            <div className="flex items-center gap-4">
+              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
+                <Github size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-accent transition-colors duration-300" aria-label="LinkedIn">
-                <Linkedin size={20} className="hover:scale-110 transition-transform duration-300" />
+              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
+                <Linkedin size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="Email">
-                <Mail size={20} className="hover:scale-110 transition-transform duration-300" />
+              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
+                <Mail size={20} />
               </a>
             </div>
           </div>
@@ -93,6 +89,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Moving the keyframes animation to index.css */}
     </section>
   );
 };
