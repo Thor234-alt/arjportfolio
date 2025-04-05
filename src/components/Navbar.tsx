@@ -7,7 +7,7 @@ import ThemeToggle from '@/components/ThemeToggle';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [name, setName] = useState('Your Name');
+  const [name, setName] = useState('Adarsh');
 
   useEffect(() => {
     const handleScroll = () => {

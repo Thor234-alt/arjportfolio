@@ -2,40 +2,44 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowUpRight, Github } from 'lucide-react';
+import { ArrowUpRight, Github, Code, Timer, Music, Book } from 'lucide-react';
 
 const projectsData = [
   {
-    title: "AI Conversation Assistant",
-    description: "A web-based chatbot leveraging GPT-4 to provide contextually relevant responses with memory retention capabilities.",
-    tags: ["React", "LLM", "API Integration"],
+    title: "Focus Timer",
+    description: "A productivity application designed to help users manage their time effectively using the Pomodoro technique.",
+    tags: ["React", "JavaScript", "CSS"],
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/ARJ2004",
+    demo: "#",
+    icon: <Timer size={24} />
   },
   {
-    title: "Portfolio Website",
-    description: "A modern, responsive portfolio website built with React and Tailwind CSS to showcase projects and skills.",
-    tags: ["React", "Tailwind CSS", "TypeScript"],
+    title: "Music Player using GUI Python",
+    description: "A desktop music player application built with Python's GUI framework, enabling users to play and manage their music library.",
+    tags: ["Python", "Tkinter", "GUI"],
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/ARJ2004",
+    demo: "#",
+    icon: <Music size={24} />
   },
   {
-    title: "Smart Task Manager",
-    description: "A task management application with AI-powered prioritization and natural language processing for task entry.",
-    tags: ["Python", "NLP", "Web Development"],
+    title: "Exam Room Allocation",
+    description: "A system that optimizes exam room allocation based on various constraints, improving resource utilization for educational institutions.",
+    tags: ["Python", "Algorithms", "Database"],
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/ARJ2004/ERA",
+    demo: "#",
+    icon: <Book size={24} />
   },
   {
-    title: "Language Learning Bot",
-    description: "An educational chatbot that helps users learn new languages through interactive conversations and exercises.",
-    tags: ["LLM", "Python", "Educational Tech"],
+    title: "AI Chatbot using LLM and RAASA",
+    description: "An intelligent chatbot leveraging Large Language Models and Retrieval-Augmented Generation for context-aware conversations.",
+    tags: ["Python", "LLM", "RAG"],
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/ARJ2004/AI-Chat-Bot",
+    demo: "#",
+    icon: <Code size={24} />
   }
 ];
 
@@ -71,6 +75,9 @@ const Projects = () => {
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+                  <div className="absolute top-4 left-4 p-2 rounded-full bg-background/80 backdrop-blur-sm">
+                    {project.icon}
+                  </div>
                 </div>
                 
                 <CardHeader>

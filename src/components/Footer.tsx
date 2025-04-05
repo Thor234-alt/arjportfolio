@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <a href="#home" className="text-xl font-bold tracking-tight">
-              Portfolio<span className="text-primary">.</span>
+              Adarsh<span className="text-primary">.</span>
             </a>
             <p className="mt-2 text-muted-foreground max-w-md">
               Passionate about creating innovative solutions through code and AI.
@@ -20,25 +20,36 @@ const Footer = () => {
           
           <div className="flex space-x-6">
             <a 
-              href="#" 
+              href="https://github.com/ARJ2004" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-full hover:bg-background"
               aria-label="GitHub"
             >
               <Github size={20} />
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/adarsh-jakkali-04008b230/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-full hover:bg-background"
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
             </a>
             <a 
-              href="#" 
+              href="mailto:adarshrj16@gmail.com" 
               className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-full hover:bg-background"
               aria-label="Email"
             >
               <Mail size={20} />
+            </a>
+            <a 
+              href="tel:+919740724274" 
+              className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-full hover:bg-background"
+              aria-label="Phone"
+            >
+              <Phone size={20} />
             </a>
           </div>
         </div>
@@ -46,7 +57,7 @@ const Footer = () => {
         <div className="pt-8 mt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              &copy; {currentYear} Portfolio. All rights reserved.
+              &copy; {currentYear} Adarsh Jakkali. All rights reserved.
             </p>
             
             <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 md:mt-0">

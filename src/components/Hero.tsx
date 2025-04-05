@@ -66,13 +66,13 @@ const Hero = () => {
             </Button>
             
             <div className="flex items-center gap-4">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
+              <a href="https://github.com/ARJ2004" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
                 <Github size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/adarsh-jakkali-04008b230/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
+              <a href="mailto:adarshrj16@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
                 <Mail size={20} />
               </a>
             </div>
@@ -89,8 +89,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Moving the keyframes animation to index.css */}
     </section>
   );
 };

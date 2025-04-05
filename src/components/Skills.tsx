@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Progress } from '@/components/ui/progress';
+import { Figma } from 'lucide-react';
 
 interface SkillCategory {
   title: string;
@@ -52,7 +53,7 @@ const Skills = () => {
         { name: "Node.js", level: 75 },
         { name: "TensorFlow", level: 70 },
         { name: "Tailwind CSS", level: 85 },
-        { name: "Flask", level: 80 }
+        { name: "Figma", level: 80 }
       ]
     },
     {
@@ -60,9 +61,9 @@ const Skills = () => {
       skills: [
         { name: "LLM Fine-tuning", level: 80 },
         { name: "Natural Language Processing", level: 85 },
-        { name: "Neural Networks", level: 70 },
-        { name: "Conversational AI", level: 90 },
-        { name: "Data Analysis", level: 75 }
+        { name: "Data Analysis", level: 75 },
+        { name: "Retrieval Augmented Generation", level: 80 },
+        { name: "Prompt Engineering", level: 90 }
       ]
     }
   ];
@@ -145,11 +146,11 @@ const Skills = () => {
               </div>
               <div className="flex gap-4 items-start">
                 <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/5">
-                  <span className="text-primary font-medium">Py</span>
+                  <Figma size={20} className="text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Python for Data Science</h4>
-                  <p className="text-muted-foreground">DataCamp, 2022</p>
+                  <h4 className="font-medium">UI/UX Design with Figma</h4>
+                  <p className="text-muted-foreground">DesignLab, 2023</p>
                 </div>
               </div>
             </div>
