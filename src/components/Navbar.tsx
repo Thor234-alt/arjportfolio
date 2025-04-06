@@ -30,7 +30,7 @@ const Navbar = () => {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out px-6 md:px-8',
-        isScrolled ? 'py-4 navbar-blur border-b border-white/10' : 'py-6'
+        isScrolled ? 'py-4 navbar-blur border-b border-forest/10 dark:border-cream/10' : 'py-6'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -39,7 +39,7 @@ const Navbar = () => {
             href="#home" 
             className="text-xl md:text-2xl font-bold tracking-tight"
           >
-            {name}<span className="text-primary">.</span>
+            {name}<span className="text-forest dark:text-cream">.</span>
           </a>
         </div>
 
@@ -49,7 +49,7 @@ const Navbar = () => {
               <a
                 key={item}
                 href={`#${item}`}
-                className="link-underline text-sm font-medium capitalize"
+                className="link-underline text-sm font-medium capitalize hover:text-forest dark:hover:text-cream transition-colors"
               >
                 {item}
               </a>
@@ -71,7 +71,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div
         className={cn(
-          'fixed inset-0 z-40 bg-background/95 backdrop-blur-md flex flex-col justify-center items-center space-y-8 transition-all duration-300 md:hidden',
+          'fixed inset-0 z-40 bg-cream/95 dark:bg-forest/95 backdrop-blur-md flex flex-col justify-center items-center space-y-8 transition-all duration-300 md:hidden',
           isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         )}
       >
@@ -83,7 +83,7 @@ const Navbar = () => {
           <a
             key={item}
             href={`#${item}`}
-            className="text-2xl font-medium capitalize"
+            className="text-2xl font-medium capitalize text-forest dark:text-cream hover:text-opacity-70 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             {item}
