@@ -33,13 +33,13 @@ const About = () => {
             <h2 className="section-title after:content-[''] after:block after:w-20 after:h-1 after:bg-primary after:mt-2">About Me</h2>
             <div className="space-y-6 text-lg">
               <p>
-                I'm a third-year Computer Science student passionate about creating intelligent and user-friendly applications. My journey in tech began with Python programming and evolved into exploring the fascinating world of artificial intelligence and web development.
+                I'm a fourth-year Computer Science student passionate about creating intelligent and user-friendly applications. My journey in tech began with Python programming and evolved into exploring the fascinating world of artificial intelligence, web development, and cloud technologies.
               </p>
               <p>
-                With a strong foundation in computer science principles and a keen eye for design, I strive to build solutions that are not only functional but also aesthetically pleasing and intuitive to use.
+                With a strong foundation in computer science principles and growing expertise in DevOps and cloud domains, I strive to build scalable solutions that are not only functional but also efficiently deployed and maintained in cloud environments.
               </p>
               <p>
-                My current focus involves working with Large Language Models (LLMs) to develop conversational AI systems that can understand and respond to user needs effectively. I believe in the power of technology to solve real-world problems and enhance human experiences.
+                My current focus involves working with Large Language Models (LLMs), cloud platforms like AWS and Azure, and developing robust backend systems. I'm particularly interested in the intersection of AI and cloud infrastructure, believing in the power of technology to solve real-world problems at scale.
               </p>
             </div>
           </div>

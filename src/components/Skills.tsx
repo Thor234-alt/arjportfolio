@@ -57,6 +57,16 @@ const Skills = () => {
       ]
     },
     {
+      title: "Cloud & DevOps",
+      skills: [
+        { name: "AWS", level: 80 },
+        { name: "Azure", level: 75 },
+        { name: "Docker", level: 70 },
+        { name: "CI/CD", level: 75 },
+        { name: "Linux", level: 80 }
+      ]
+    },
+    {
       title: "AI & Machine Learning",
       skills: [
         { name: "LLM Fine-tuning", level: 80 },
@@ -112,8 +122,8 @@ const Skills = () => {
             <div className="space-y-6">
               <div className="border-l-2 border-primary pl-6 py-2 relative">
                 <div className="absolute w-3 h-3 bg-primary rounded-full -left-[7px] top-3"></div>
-                <h4 className="font-medium">Bachelor of Science in Computer Science</h4>
-                <p className="text-muted-foreground">University Name, Expected 2025</p>
+                <h4 className="font-medium">Bachelor of Engineering in Computer Science</h4>
+                <p className="text-muted-foreground">4th Year, Expected 2025</p>
               </div>
               <div className="border-l-2 border-muted pl-6 py-2 relative">
                 <div className="absolute w-3 h-3 bg-muted rounded-full -left-[7px] top-3"></div>

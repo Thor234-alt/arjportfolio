@@ -48,7 +48,7 @@ const Hero = () => {
       <div className="section-container flex flex-col items-start">
         <div className="reveal max-w-4xl">
           <div className="inline-block rounded-full bg-accent px-4 py-1.5 mb-6 animate-fade-in">
-            <span className="text-sm font-medium text-primary">3rd Year Computer Science Student</span>
+            <span className="text-sm font-medium text-primary">4th Year Computer Science Student</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-tight lg:leading-tight mb-6">
@@ -56,7 +56,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl">
-            Specializing in LLM technology, web development, and building intelligent chatbots that transform user experiences.
+            Specializing in LLM technology, cloud infrastructure, DevOps practices, and building intelligent solutions that scale.
           </p>
           
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">

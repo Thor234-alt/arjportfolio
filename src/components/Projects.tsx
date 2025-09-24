@@ -6,13 +6,13 @@ import { ArrowUpRight, Github, Code, Timer, Music, Book } from 'lucide-react';
 
 const projectsData = [
   {
-    title: "Focus Timer",
-    description: "A productivity application designed to help users manage their time effectively using the Pomodoro technique.",
-    tags: ["React", "JavaScript", "CSS"],
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
+    title: "IdeaTinder",
+    description: "A web application where users can post ideas, receive feedback, swipe through concepts, save ideas, connect with like-minded creators, and collaborate on innovative projects.",
+    tags: ["React", "Node.js", "MongoDB"],
+    image: "https://images.unsplash.com/photo-1553028826-f4804151e2be?auto=format&fit=crop&w=800&q=80",
     github: "https://github.com/ARJ2004",
-    demo: "#",
-    icon: <Timer size={24} />
+    demo: "https://ideatinder.vercel.app/",
+    icon: <Code size={24} />
   },
   {
     title: "Music Player using GUI Python",
