@@ -8,8 +8,8 @@ const projectsData = [
   {
     title: "IdeaTinder",
     description: "A web application where users can post ideas, receive feedback, swipe through concepts, save ideas, connect with like-minded creators, and collaborate on innovative projects.",
-    tags: ["React", "Node.js", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1553028826-f4804151e2be?auto=format&fit=crop&w=800&q=80",
+    tags: ["React", "Node.js", "DyanomoDB"],
+    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fillustrations%2Fidea-symbol-innovation-logo-3383766%2F&psig=AOvVaw164jkzzqxylXcs2qjlWs8e&ust=1758823269685000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLDt47T98Y8DFQAAAAAdAAAAABAE",
     github: "https://github.com/ARJ2004",
     demo: "https://ideatinder.vercel.app/",
     icon: <Code size={24} />
@@ -20,7 +20,7 @@ const projectsData = [
     tags: ["Python", "Tkinter", "GUI"],
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
     github: "https://github.com/ARJ2004",
-    demo: "#",
+    demo: "https://github.com/ARJ2004",
     icon: <Music size={24} />
   },
   {
@@ -29,7 +29,7 @@ const projectsData = [
     tags: ["Python", "Algorithms", "Database"],
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
     github: "https://github.com/ARJ2004/ERA",
-    demo: "#",
+    demo: "https://github.com/ARJ2004/ERA",
     icon: <Book size={24} />
   },
   {
@@ -38,7 +38,7 @@ const projectsData = [
     tags: ["Python", "LLM", "RAG"],
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
     github: "https://github.com/ARJ2004/AI-Chat-Bot",
-    demo: "#",
+    demo: "https://github.com/ARJ2004/AI-Chat-Bot",
     icon: <Code size={24} />
   }
 ];

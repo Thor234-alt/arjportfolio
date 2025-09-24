@@ -141,8 +141,8 @@ const Skills = () => {
                   <span className="text-primary font-medium">AI</span>
                 </div>
                 <div>
-                  <h4 className="font-medium">AI and Machine Learning</h4>
-                  <p className="text-muted-foreground">Stanford Online, 2023</p>
+                  <h4 className="font-medium">AWS Cloud Practitioner</h4>
+                  <p className="text-muted-foreground">AWS, 2025</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
