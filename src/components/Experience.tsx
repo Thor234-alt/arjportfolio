@@ -39,8 +39,6 @@ const Experience = () => {
       ]
     }
   ];
-};
-
 
   return (
     <section id="experience" className="py-20 md:py-32">
@@ -54,7 +52,10 @@ const Experience = () => {
 
         <div className="max-w-4xl mx-auto">
           {experiences.map((experience, index) => (
-            <Card key={index} className="mb-8 transition-all duration-300 hover:shadow-lg border border-border hover:border-primary/20">
+            <Card
+              key={index}
+              className="mb-8 transition-all duration-300 hover:shadow-lg border border-border hover:border-primary/20"
+            >
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
@@ -72,12 +73,12 @@ const Experience = () => {
                   </div>
                 </div>
               </CardHeader>
-              
+
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
                   {experience.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {experience.skills.map((skill, skillIndex) => (
                     <Badge key={skillIndex} variant="secondary" className="text-xs">
