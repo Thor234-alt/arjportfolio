@@ -6,13 +6,41 @@ import { Building2, Calendar } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: "SED Intern",
+      title: "SDE Intern",
       company: "Aulosa Mediatech Private Limited",
       duration: "Current",
-      description: "Contributing to backend development projects and implementing AWS deployment services. Working on scalable cloud solutions and improving system architecture.",
-      skills: ["Backend Development", "AWS", "Cloud Deployment", "System Architecture"]
+      description:
+        "Developing and maintaining backend services using Node.js and Express.js, building scalable REST APIs, and supporting cloud deployments on AWS. Implementing CI/CD pipelines, improving system reliability, and contributing to architecture decisions to enhance performance and scalability.",
+      skills: [
+        "Backend Development",
+        "Node.js",
+        "REST APIs",
+        "AWS",
+        "CI/CD",
+        "Cloud Deployment",
+        "System Architecture"
+      ]
+    },
+    {
+      title: "DevOps Intern",
+      company: "Tranna",
+      duration: "Jan 2025 - Jul 2025",
+      description:
+        "Worked on CI/CD pipeline automation, containerized deployments, and infrastructure setup. Assisted with Kubernetes deployments, Nginx configuration, and Terraform-based infrastructure while also contributing to backend development using Nest.js.",
+      skills: [
+        "DevOps",
+        "CI/CD",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "Nginx",
+        "AWS",
+        "Nest.js"
+      ]
     }
   ];
+};
+
 
   return (
     <section id="experience" className="py-20 md:py-32">
